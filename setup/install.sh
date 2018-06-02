@@ -9,3 +9,13 @@ brew install zsh zsh-completions
 ### Install oh-my-zsh
 # http://ohmyz.sh/
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+### Install vim-plug
+# https://github.com/junegunn/vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim#
+
+### Install fzf
+# https://github.com/junegunn/fzf
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
