@@ -19,3 +19,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.
 brew install fzf
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
+
+### Install yarn
+# https://yarnpkg.com/lang/en/docs/install/#mac-stable
+brew install yarn
