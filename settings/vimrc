@@ -93,6 +93,11 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 " FZF
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" Session settings
+" let g:sessions_dir = '~/vim-sessions'
+" exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+" exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
