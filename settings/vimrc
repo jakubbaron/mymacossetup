@@ -86,6 +86,7 @@ map <leader>q gqip
 "imap <C-K> <c-o>:pyf /usr/local/Cellar/clang-format/2018-10-04/share/clang/clang-format.py<cr>"
 set shortmess=at
 map <silent> <C-C> :exe "!tmux send -t +1 'make' Enter" <CR> <CR>
+map <silent> <C-X> : exe "!tmux send -t +1 './main.out' Enter" <CR><CR>
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
