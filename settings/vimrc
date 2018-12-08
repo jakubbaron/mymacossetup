@@ -81,6 +81,11 @@ vnoremap <F1> :set invfullscreen<CR>
 
 " Formatting
 map <leader>q gqip
+" clang-format
+"map <C-K> :pyf /usr/local/Cellar/clang-format/2018-10-04/share/clang/clang-format.py<cr>
+"imap <C-K> <c-o>:pyf /usr/local/Cellar/clang-format/2018-10-04/share/clang/clang-format.py<cr>"
+set shortmess=at
+map <silent> <C-C> :exe "!tmux send -t +1 'make' Enter" <CR> <CR>
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
@@ -89,6 +94,9 @@ set listchars=tab:▸\ ,eol:¬
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
+" Folding methods
+set foldmethod=indent
+set foldlevel=99
 " Plugins
 " FZF
 set runtimepath^=~/.vim/bundle/ctrlp.vim
