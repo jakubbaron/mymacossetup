@@ -87,6 +87,9 @@ map <leader>q gqip
 set shortmess=at
 map <silent> <C-C> :exe "!tmux send -t +1 'make' Enter" <CR> <CR>
 map <silent> <C-X> : exe "!tmux send -t +1 './main.out' Enter" <CR><CR>
+map <silent> <C-H> : exe "!tmux send -t +1 'make clean' Enter" <CR><CR>
+map <silent> <C-J> : exe "!tmux send -t +1 'make test' Enter" <CR><CR>
+map <silent> <C-K> : exe "!tmux send -t +1 './out/test' Enter" <CR><CR>
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
