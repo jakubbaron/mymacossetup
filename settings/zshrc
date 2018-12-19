@@ -18,7 +18,8 @@ SPACESHIP_CHAR_COLOR_SUCCESS="yellow"
 SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
 SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
 SPACESHIP_USER_SHOW="true"
-# ZSH_THEME="robbyrussell"
+SPACESHIP_TIME_SHOW="true"
+SPACESHIP_TIME_12HR="true"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -75,6 +76,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
