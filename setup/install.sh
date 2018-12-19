@@ -27,3 +27,6 @@ brew install yarn
 #install nerd fonts
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
+brew install boost
+brew install clang-format
+brew install tmux
