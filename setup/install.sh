@@ -23,3 +23,7 @@ $(brew --prefix)/opt/fzf/install
 ### Install yarn
 # https://yarnpkg.com/lang/en/docs/install/#mac-stable
 brew install yarn
+
+#install nerd fonts
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
