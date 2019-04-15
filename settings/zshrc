@@ -109,3 +109,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/github/jakubbaron/mymacossetup/settings/aliases
+export PATH=/usr/local/bin:$PATH
+# virtualenv and virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
