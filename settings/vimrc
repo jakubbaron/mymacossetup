@@ -81,15 +81,7 @@ vnoremap <F1> :set invfullscreen<CR>
 
 " Formatting
 map <leader>q gqip
-" clang-format
-"map <C-K> :pyf /usr/local/Cellar/clang-format/2018-10-04/share/clang/clang-format.py<cr>
-"imap <C-K> <c-o>:pyf /usr/local/Cellar/clang-format/2018-10-04/share/clang/clang-format.py<cr>"
 set shortmess=at
-map <silent> <C-C> :exe "!tmux send -t +1 'make' Enter" <CR> <CR>
-map <silent> <C-X> : exe "!tmux send -t +1 './main.out' Enter" <CR><CR>
-map <silent> <C-H> : exe "!tmux send -t +1 'make clean' Enter" <CR><CR>
-map <silent> <C-J> : exe "!tmux send -t +1 'make test' Enter" <CR><CR>
-map <silent> <C-K> : exe "!tmux send -t +1 './out/test' Enter" <CR><CR>
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
@@ -110,11 +102,78 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 " exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
+
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+"
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+ "split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" To add the proper PEP 8 indentation, add the following to your .vimrc:
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let python_highlight_all=1
+" if has('gui_running')
+" else
+"   colorscheme zenburn
+" endif
+call togglebg#map("<F5>")
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+set background=dark
 " Color scheme (terminal)
 set t_Co=256
-set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
 colorscheme solarized
